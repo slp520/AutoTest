@@ -1,0 +1,2 @@
+print("hahahahahah")
+input("qweeqw")

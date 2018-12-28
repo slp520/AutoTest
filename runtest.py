@@ -3,7 +3,7 @@ import time
 import HTMLTestRunner
 import unittest
 import os
-from send_email import sendemail
+from common.configEmail import sendemail
 
 # def send_mail(file_new):
 #     sender = '13058019302@163.com'
@@ -88,3 +88,5 @@ if __name__ == "__main__":
     runner.run (alltestnames)
     fp.close ()
     send_report(testreport)
+    # os.system('pause')
+    # a = input("qingshuru")
