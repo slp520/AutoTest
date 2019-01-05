@@ -79,7 +79,7 @@ def creatsuite():
 
 if __name__ == "__main__":
     now = time.strftime ("%Y-%m-%d %H_%M_%S")
-    testreport = 'D:\\AutoTest\\report\\'
+    testreport = 'D:\\FactoringAutoTest\\report\\'
     filename = testreport + now + '_result.html'
     fp = open (filename, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner (stream=fp, title=u'自动化报告', description=u'用例执行情况：')

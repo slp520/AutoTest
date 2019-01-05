@@ -1,6 +1,6 @@
 import requests
 
-#cookie or session 登录方式
+#cookie or session 登录态获取方式
 class Login:
 
     def __init__(self):

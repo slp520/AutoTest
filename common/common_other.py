@@ -4,12 +4,12 @@ from xml.etree import ElementTree as ElementTree
 from common.Log import MyLog as Log
 
 
-localConfigHttp = configHttp.ConfigHttp()
+# localConfigHttp = configHttp.ConfigHttp()
 log = Log.get_log()
 logger = log.get_logger()
 
 # 从excel文件中读取测试用例
-def get_xls(xls_name, sheet_name):
+def get_xls(xls_name, sheet_name,proDir):
     cls = []
     # get xls file's path
     xlsPath = os.path.join(proDir, "testFile", xls_name)
@@ -26,7 +26,7 @@ def get_xls(xls_name, sheet_name):
 
 # 从xml文件中读取sql语句
 database = {}
-def set_xml():
+def set_xml(proDir):
     if len(database) == 0:
         sql_path = os.path.join(proDir, "testFile", "SQL.xml")
         tree = ElementTree.parse(sql_path)

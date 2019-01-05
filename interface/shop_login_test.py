@@ -12,28 +12,28 @@ class ShopLoginTest (unittest.TestCase):
         self.case_name = " "
 
 
-    def test_login_shop(self):
+    def login_shop(self):
         # 点击验证码
-        test_session = requests.session ()
-        r = test_session.get(self.base_url_shop_login_code_apply)
+        self.test_session = requests.session ()
+        self.r = self.test_session.get(self.base_url_shop_login_code_apply)
 
         # 获取验证码
-        picture_code = test_session.get(self.base_url_shop_login_code)
+        self.picture_code = self.test_session.get(self.base_url_shop_login_code)
 
-        result = picture_code.json ()
-        print(result)
-        code =  result['data']
-        print(code)
+        self.result = self.picture_code.json ()
+        print(self.result)
+        self.code =  self.result['data']
+        print(self.code)
         self.body_data = {
             "username":"新体验项目助理",
             "password": "Fdd123@@",
-            "identifyCode": str(code) ,
+            "identifyCode": str(self.code) ,
             "keep": 1
         }
-        r2 = test_session.post(self.base_url_shop_login,data=self.body_data)
-        result = r2.json()
-        print(result)
-        return test_session
+        self.r2 = self.test_session.post(self.base_url_shop_login,data=self.body_data)
+        self.result = self.r2.json()
+        print(self.result)
+        return self.test_session
 
 if __name__ =="__main__":
     unittest.main
